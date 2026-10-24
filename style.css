@@ -1,90 +1,25 @@
-/* Global Theme */
-:root {
-  --purple-light: #bd88ff;
-  --purple: #7953ff;
-  --blue-electric: #1c1cff;
-  --dark: #0f0f1a;
-  --white: #ffffff;
+#welcomeScreen {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  transition: transform 1.2s ease-in-out, opacity 1.2s ease-in-out;
 }
 
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: var(--purple-light);
-  color: var(--dark);
+.zoomIn {
+  transform: scale(3);
+  opacity: 0;
 }
 
-/* Welcome Screen */
-#welcome-screen {
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(135deg, var(--purple), var(--blue-electric));
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--white);
-  z-index: 999;
-}
-
-.welcome-content {
-  text-align: center;
-  animation: fadeIn 1.2s ease;
-}
-
-#welcome-screen button {
-  margin-top: 20px;
+#enterBtn {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 12px 28px;
-  background: var(--white);
-  color: var(--purple);
+  font-size: 1.2rem;
+  background: white;
   border: none;
-  border-radius: 8px;
-  font-size: 1rem;
+  border-radius: 6px;
   cursor: pointer;
-}
-
-/* Main Site */
-.hidden {
-  display: none;
-}
-
-header {
-  background: var(--purple);
-  color: var(--white);
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-nav a {
-  margin-left: 20px;
-  color: var(--white);
-  text-decoration: none;
-}
-
-.hero {
-  padding: 120px 20px;
-  text-align: center;
-  background: linear-gradient(135deg, var(--purple-light), var(--purple));
-  color: var(--white);
-}
-
-.product-grid {
-  display: flex;
-  gap: 20px;
-  padding: 20px;
-}
-
-.product-card {
-  background: var(--white);
-  padding: 20px;
-  border-radius: 12px;
-  flex: 1;
-  text-align: center;
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
 }
