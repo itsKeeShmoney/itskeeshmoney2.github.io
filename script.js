@@ -1,4 +1,8 @@
-document.getElementById("enter-site").addEventListener("click", () => {
-  document.getElementById("welcome-screen").style.display = "none";
-  document.getElementById("main-site").classList.remove("hidden");
+document.getElementById("enterBtn").addEventListener("click", () => {
+  const screen = document.getElementById("welcomeScreen");
+  screen.classList.add("zoomIn");
+
+  setTimeout(() => {
+    window.location.href = "home.html"; 
+  }, 1200);
 });
