@@ -3,57 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WorthIt</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Worth It Global</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <!-- Welcome Screen -->
-  <div id="welcome-screen">
-    <div class="welcome-content">
-      <h1>Show the world you are Worth IT</h1>
-      <p>Worth It</p>
-      <button id="enter-site">Enter</button>
-    </div>
+  <div id="welcomeScreen">
+    <video autoplay loop muted playsinline id="welcomeVideo">
+      <source src="assets/media/welcome-loop.mp4" type="video/mp4">
+    </video>
+
+    <button id="enterBtn">Enter</button>
   </div>
 
-  <!-- Main Site -->
-  <div id="main-site" class="hidden">
-    <header>
-      <h2>WorthIt Global</h2>
-      <nav>
-        <a href="#products">Products</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
-
-    <section class="hero">
-      <h1>Your Spark Starts Here</h1>
-      <p>Premium streetwear crafted for confidence.</p>
-      <button class="cta">Shop Now</button>
-    </section>
-
-    <section id="products">
-      <h2>Featured Products</h2>
-      <div class="product-grid">
-        <div class="product-card">
-          <h3>WORTHIT ANIME</h3>
-          <p>$29.99</p>
-        </div>
-        <div class="product-card">
-          <h3>WORTHIT OG</h3>
-          <p>$19.99</p>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <p>© 2026 WorthIt Global</p>
-    </footer>
-  </div>
-
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
+
+
