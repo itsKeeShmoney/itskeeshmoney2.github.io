@@ -1,14 +1,9 @@
 #welcomeVideo {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   object-fit: cover;
   z-index: -1;
-}
-.zoomIn {
-  transform: scale(3);
-  opacity: 0;
-  transition: transform 1.2s ease-in-out, opacity 1.2s ease-in-out;
 }
