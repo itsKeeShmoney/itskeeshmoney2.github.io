@@ -1,4 +1,4 @@
-document.addEventListener("click anywhere", () => {
+document.addEventListener("click", () => {
   const welcomeScreen = document.getElementById("welcomeScreen");
   welcomeScreen.classList.add("zoomIn");
 
