@@ -1,8 +1,12 @@
-document.addEventListener("click", () => {
-  const welcomeScreen = document.getElementById("welcomeScreen");
-  welcomeScreen.classList.add("zoomIn");
-
-  setTimeout(() => {
-    window.location.href = "home.html";
-  }, 1200);
-});
+fetch("https://YOUR-AZURE-APP.azurewebsites.net/api/products")
+  .then(res => res.json())
+  .then(products => {
+    const grid = document.getElementById("productGrid");
+    grid.innerHTML = products.map(p => `
+      <div class="productCard">
+        <img src="${p.image}" alt="${p.name}">
+        <h3>${p.name}</h3>
+        <p>$${p.price}</p>
+      </div>
+    `).join("");
+  });
