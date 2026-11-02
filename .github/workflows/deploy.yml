@@ -21,10 +21,13 @@ jobs:
   frontend:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
         with:
-          node-version: '22'
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          package-manager-cache: false
       - name: Check JavaScript syntax
         run: |
           node --check script.js
@@ -35,11 +38,12 @@ jobs:
           cp index.html home.html products.html account.html 404.html style.css script.js site-config.js staticwebapp.config.json dist/
           cp assets/media/welcome-loop.mp4 dist/assets/media/
           printf '{"commit":"%s","mode":"prelaunch"}\n' "$GITHUB_SHA" > dist/version.json
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: worthit-prelaunch-frontend
           path: dist/
           if-no-files-found: error
+          retention-days: 14
       - name: Deploy to existing Azure Static Web App
         if: github.event_name != 'pull_request'
         uses: Azure/static-web-apps-deploy@v1
@@ -50,5 +54,3 @@ jobs:
           api_location: ''
           output_location: ''
           skip_app_build: true
-          skip_api_build: true
-          production_branch: main

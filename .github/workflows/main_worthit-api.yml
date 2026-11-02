@@ -24,9 +24,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
       - name: Set up Java 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v6
         with:
           java-version: '17'
           distribution: 'microsoft'
@@ -36,7 +38,7 @@ jobs:
         run: mvn -B -f api/pom.xml verify
       - name: Require executable artifact
         run: test -s api/target/worthit-api.jar
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: worthit-api
           path: api/target/worthit-api.jar
@@ -50,11 +52,11 @@ jobs:
       id-token: write
       contents: read
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: worthit-api
       - name: Login to Azure using existing federated identity
-        uses: azure/login@v2
+        uses: azure/login@v3
         with:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_E5504F5B104C44B78939B3870B6C4E1F }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_1FBA363095A3499E872ED9BCEB78AE6E }}

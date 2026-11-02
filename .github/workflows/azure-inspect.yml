@@ -1,9 +1,6 @@
 name: Inspect existing Azure hosting
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths: ['.github/workflows/azure-inspect.yml']
 permissions:
   contents: read
   id-token: write
