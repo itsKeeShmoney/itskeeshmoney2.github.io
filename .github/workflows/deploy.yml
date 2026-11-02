@@ -1,1 +1,31 @@
-
+name: Check pre-launch frontend
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check JavaScript syntax
+        run: |
+          node --check script.js
+          node --check site-config.js
+      - name: Build static artifact without publishing API source
+        run: |
+          mkdir -p dist/assets/media
+          cp index.html home.html products.html account.html 404.html style.css script.js site-config.js staticwebapp.config.json dist/
+          cp assets/media/welcome-loop.mp4 dist/assets/media/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: worthit-prelaunch-frontend
+          path: dist/
+          if-no-files-found: error
