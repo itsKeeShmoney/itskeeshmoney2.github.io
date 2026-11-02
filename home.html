@@ -2,22 +2,69 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Worth It – Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Worth It Global — streetwear grounded in self-worth. Explore the upcoming WORTHIT OG and WORTHIT ANIME collections.">
+  <title>Worth It Global — Home</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="mainHeader">
-    <h1>Worth It Global</h1>
-    <nav>
-      <a href="home.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="account.html">Account</a>
+    <a class="brand" href="home.html" aria-label="Worth It Global home">WORTH IT<span>GLOBAL</span></a>
+    <nav aria-label="Main navigation">
+      <a href="home.html" aria-current="page">Home</a>
+      <a href="products.html">Collections</a>
+      <a href="account.html">Members</a>
     </nav>
   </header>
-
-  <section class="hero">
-    <h2>Upcoming Drops</h2>
-    <p>Curated essentials for those who know they’re worth it.</p>
-  </section>
+  <main id="main" class="page-main" tabindex="-1">
+    <section class="home-hero" aria-labelledby="home-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Worth It Global / Pre-launch</p>
+        <h1 id="home-title">WEAR YOUR<br><span class="accent">WORTH.</span></h1>
+        <p class="intro">Streetwear grounded in self-worth.</p>
+        <p>For those who know they’re worth it. This is the beginning of the next chapter.</p>
+        <div class="actions">
+          <a class="button" href="products.html">Explore upcoming collections <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="#the-brand">The brand <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <div class="hero-film">
+        <div class="film-frame">
+          <video loop muted playsinline controls preload="metadata" id="welcomeVideo" aria-label="Worth It Global brand film">
+            <source src="assets/media/welcome-loop.mp4" type="video/mp4">
+            Your browser cannot play this film. You can still explore the collections.
+          </video>
+          <span class="film-caption" aria-hidden="true">WORTH IT / GLOBAL</span>
+        </div>
+        <div class="video-controls">
+          <button class="video-toggle" id="videoToggle" type="button" aria-controls="welcomeVideo" hidden>Play welcome film</button>
+          <p id="videoStatus" class="small-text" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+    <section id="the-brand" class="brand-section" aria-labelledby="brand-title">
+      <p class="eyebrow">01 / The mindset</p>
+      <div>
+        <h2 id="brand-title">Your worth.<br>On your terms.</h2>
+        <p>Worth It Global sits at the intersection of streetwear and self-worth. A reminder to take up space, express yourself, and wear what feels like you.</p>
+        <p class="brand-statement">Not a question. A statement.</p>
+      </div>
+    </section>
+    <section class="drops-section" aria-labelledby="drops-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">02 / What’s next</p><h2 id="drops-title">Upcoming Drops</h2></div>
+        <span class="status-tag">Coming soon</span>
+      </div>
+      <div class="drop-links">
+        <a href="products.html#worthit-og"><span class="drop-index" aria-hidden="true">01</span><span>WORTHIT OG</span><span class="drop-arrow" aria-hidden="true">↗</span></a>
+        <a href="products.html#worthit-anime"><span class="drop-index" aria-hidden="true">02</span><span>WORTHIT ANIME</span><span class="drop-arrow" aria-hidden="true">↗</span></a>
+      </div>
+      <p class="notice">Collection previews only. Product details and release dates have not been announced.</p>
+    </section>
+    <noscript><p class="notice">You can explore the site without JavaScript. Use the film’s controls to play or pause it; the live catalog needs JavaScript.</p></noscript>
+  </main>
+  <footer class="site-footer"><span>Worth It Global · Streetwear &amp; self-worth</span><a href="index.html">Back to the welcome film</a></footer>
+  <script src="script.js" defer></script>
 </body>
 </html>

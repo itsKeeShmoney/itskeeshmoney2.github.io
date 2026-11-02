@@ -3,17 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Worth It</title>
+  <meta name="description" content="Worth It Global. Streetwear. Self-worth. A new chapter is coming.">
+  <title>Worth It Global — Enter</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
-<body>
-
+<body class="welcome-page">
+  <a class="skip-link" href="#main">Skip to content</a>
   <div id="welcomeScreen">
-    <video autoplay loop muted playsinline id="welcomeVideo">
+    <video loop muted playsinline preload="metadata" id="welcomeVideo" aria-label="Worth It Global welcome film">
       <source src="assets/media/welcome-loop.mp4" type="video/mp4">
-    <button id="enterBtn">Enter</button>
+      Your browser cannot play this film. Use the Enter link to continue.
+    </video>
+    <header class="mainHeader">
+      <a class="brand" href="home.html" aria-label="Worth It Global home">WORTH IT<span>GLOBAL</span></a>
+      <nav aria-label="Main navigation">
+        <a href="home.html">Home</a>
+        <a href="products.html">Collections</a>
+        <a href="account.html">Members</a>
+      </nav>
+    </header>
+    <main id="main" class="welcome-content" tabindex="-1">
+      <p class="eyebrow">Streetwear. Self-worth.</p>
+      <h1 class="welcome-title">WORTH<br><span>IT.</span></h1>
+      <p class="welcome-intro">Not a question. A statement.</p>
+      <div class="actions">
+        <a class="button" id="enterBtn" href="home.html">Enter Worth It Global <span aria-hidden="true">↗</span></a>
+        <span class="status-tag">Pre-launch / Coming soon</span>
+      </div>
+      <div class="video-controls">
+        <button class="video-toggle" id="videoToggle" type="button" aria-controls="welcomeVideo" hidden>Play welcome film</button>
+        <p id="videoStatus" class="small-text" role="status" aria-live="polite"></p>
+      </div>
+      <noscript><p class="notice">The welcome film is paused without JavaScript. Enter still takes you to the homepage.</p></noscript>
+    </main>
+    <footer class="site-footer"><span>Worth It Global</span><span>Wear your worth.</span></footer>
   </div>
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
-</html> 
+</html>

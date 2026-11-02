@@ -2,12 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Worth It – Account</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Worth It Global member access is planned for store launch. Explore the brand and upcoming collections while account access is being prepared.">
+  <title>Worth It Global — Members</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2>Sign In / Create Account</h2>
-  <a href="https://YOUR-B2C-LOGIN-URL">Sign In</a>
-  <a href="https://YOUR-B2C-SIGNUP-URL">Create Account</a>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="mainHeader">
+    <a class="brand" href="home.html" aria-label="Worth It Global home">WORTH IT<span>GLOBAL</span></a>
+    <nav aria-label="Main navigation">
+      <a href="home.html">Home</a>
+      <a href="products.html">Collections</a>
+      <a href="account.html" aria-current="page">Members</a>
+    </nav>
+  </header>
+  <main id="main" class="page-main" tabindex="-1">
+    <section class="page-heading" aria-labelledby="account-title">
+      <p class="eyebrow">Worth It Global / Member access</p>
+      <h1 id="account-title">YOU BELONG.<br><span class="accent">STAY WORTH IT.</span></h1>
+      <p class="intro">The next chapter is still taking shape.</p>
+    </section>
+    <section class="member-panel" aria-labelledby="account-state-title">
+      <div class="member-mark" aria-hidden="true">W<span>IT.</span></div>
+      <div class="member-copy">
+        <span class="status-tag">Coming at store launch</span>
+        <h2 id="account-state-title">Member access</h2>
+        <p id="accountStatus" class="notice" role="status" aria-live="polite" aria-atomic="true">Member access is planned for store launch. Customer sign-in and account creation are not configured yet. No account information is collected on this page.</p>
+        <div id="accountActions" class="actions" hidden></div>
+        <p>For now, get to know the brand and explore the upcoming collections. No signup is needed to look around.</p>
+        <noscript><p class="notice">Account links cannot be activated without JavaScript. The brand and collection pages are still available.</p></noscript>
+        <div class="actions">
+          <a class="button" href="products.html">Explore the collections <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="home.html">Return home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><span>Worth It Global · Streetwear &amp; self-worth</span><span>Wear your worth.</span></footer>
+  <script src="site-config.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
